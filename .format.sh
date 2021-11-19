@@ -4,10 +4,11 @@
 pushd "$(dirname $0)" >/dev/null
 CWD="$(pwd -P)"
 popd >/dev/null
-FILES='ngx_cache_purge_module.c'
+# FILES='ngx_cache_purge_module.c'
+FILES=`find ./ -name "*.[h|c]"`
 
 # The file format in accordance with the style defined in .astylerc
-astyle -v --options='.astylerc' ${FILES} || (echo 'astyle failed'; exit 1);
+astyle --style=linux -U -c -H -v --options='.astylerc' ${FILES} || (echo 'astyle failed'; exit 1);
 
 # To correct this, the issuance dos2unix on each file
 # sometimes adds in Windows as a string-endins (\r\n).

@@ -2,8 +2,8 @@
 align-pointer=name
 align-reference=name
 break-after-logical
-#indent=spaces=2
-max-code-length=120
+indent=spaces=4
+max-code-length=80
 style=google
 suffix=none
 
